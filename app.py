@@ -24,7 +24,7 @@ if st.button("Predict"):
         img = ImageOps.invert(img)
         img = img.resize((28, 28))
         img_array = np.array(img).astype("float32")/255.0
-        img_array = img_array.reshape(1, 28, 28, 1)
+        img_array = img_array.reshape(28, 28)
         with st.spinner("Predicting image..."):
             prediction = smodel.predict(img_array)
             digit = np.argmax(prediction)
