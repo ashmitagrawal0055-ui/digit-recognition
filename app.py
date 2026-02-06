@@ -28,7 +28,7 @@ if st.button("Predict"):
         with st.spinner("Predicting image..."):
             prediction = smodel.predict(img_array)
             digit = np.argmax(prediction)
-            st.warning(f"Predicted digit: {digit}")
+            st.success(f"Predicted digit: {digit}")
             prediction = prediction[0]
             top_3_indices = prediction.argsort()[-3:][::-1]
             st.markdown("Top 3 Predictions:")
