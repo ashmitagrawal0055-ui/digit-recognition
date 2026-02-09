@@ -19,7 +19,7 @@ canvas_result = st_canvas(
 )
 if st.button("Predict"):
     if canvas_result.image_data is not None:
-        img=Image.fromarray(canvas_result.image_data.astype(np.uint8))
+        img=Image.fromarray(canvas_result.image_data.astype(np.uint8))   #canvas drawing into image formatting. 
         img = img.convert("L")
         img = ImageOps.invert(img)
         img = img.resize((28, 28))
